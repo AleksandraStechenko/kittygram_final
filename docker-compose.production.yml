@@ -12,19 +12,19 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend/
+    image: alexandrastechenko/backend/
     env_file: .env
     volumes:
       - static:/backend_static
       - media:/media/
   frontend:
     env_file: .env
-    build: ./frontend/
+    image: alexandrastechenko/frontend/
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
-    build: ./nginx/
+    image: alexandrastechenko/nginx/
     env_file: .env
     ports:
       - 9000:80
