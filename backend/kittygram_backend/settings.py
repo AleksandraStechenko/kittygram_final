@@ -56,7 +56,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
-
 testing_db = os.getenv('TESTING_DB', 'False').lower() == 'true'
 
 if testing_db:
